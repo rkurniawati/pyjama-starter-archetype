@@ -42,7 +42,7 @@
 
   <build>
     <plugins>
-      <plugin>
+      <plugin><!-- The generate sources phase -->
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>exec-maven-plugin</artifactId>
         <executions>
@@ -66,6 +66,18 @@
             </goals>
           </execution>
         </executions>
+      </plugin>
+      <plugin><!-- The exec:exec goal -->
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <configuration>
+          <executable>java</executable>
+          <arguments>
+            <argument>-cp</argument>
+            <argument>target/classes${path.separator}lib/Pyjama.jar</argument>
+            <argument>App</argument>
+          </arguments>
+        </configuration>
       </plugin>
     </plugins>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
