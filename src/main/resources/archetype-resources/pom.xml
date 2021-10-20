@@ -45,6 +45,7 @@
       <plugin><!-- The generate sources phase -->
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>exec-maven-plugin</artifactId>
+        <version>1.6.0</version>
         <executions>
           <execution>
             <id>pyjama</id>
@@ -66,11 +67,7 @@
             </goals>
           </execution>
         </executions>
-      </plugin>
-      <plugin><!-- The exec:exec goal -->
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>exec-maven-plugin</artifactId>
-        <configuration>
+        <configuration><!-- The exec:exec goal -->
           <executable>java</executable>
           <arguments>
             <argument>-cp</argument>
